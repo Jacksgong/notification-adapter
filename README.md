@@ -19,6 +19,8 @@ Notification风格适配，提取默认Notification的颜色
 
 因此就是使用该工具获得Title与Text的颜色，然后保证背景是透明的，就可以解决该问题。
 
+> 当然类似支付宝钱包这个Notification，我觉得是没有特别的必要自定义，此时更加推荐[使用官方的Notification风格](https://developer.android.com/training/notify-user/display-progress.html)。
+
 ## 使用
 
 Gradle引用
