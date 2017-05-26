@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/layout"
               android:layout_width="fill_parent"
+              android:orientation="vertical"
               android:layout_height="64dp"
               android:padding="10dp">
     <TextView
@@ -8,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Testing"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="13dp"/>
 
     <TextView
@@ -17,6 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:text="Testing is awecome"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="13dp"/>
 </LinearLayout>

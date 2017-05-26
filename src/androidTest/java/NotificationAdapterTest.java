@@ -1,9 +1,11 @@
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.os.Build;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.Until;
 import android.widget.RemoteViews;
 
 import org.junit.Test;
@@ -24,19 +26,19 @@ public class NotificationAdapterTest {
 
     @Test
     public void testNotificationAdapter() {
+        final String NOTIFICATION_TEXT = "adapter-text";
+        final String NOTIFICATION_TITLE = "adapter-title";
+        final long TIMEOUT = 5000;
+
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         RemoteViews contentView = new RemoteViews("cn.dreamtobe.toolset.test", R.layout.custom_layout);
-        contentView.setTextViewText(R.id.title, "Custom notification");
-        contentView.setTextViewText(R.id.text, "This is a custom layout");
+        contentView.setTextViewText(R.id.title, NOTIFICATION_TITLE);
+        contentView.setTextViewText(R.id.text, NOTIFICATION_TEXT);
         contentView.setTextColor(R.id.title, NotificationAdapter.getTitleColor(appContext));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            contentView.setTextViewTextSize(R.id.title, COMPLEX_UNIT_PX, NotificationAdapter.getTitleSize(appContext));
-        }
-        contentView.setTextColor(R.id.text, NotificationAdapter.getContentColor(appContext));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            contentView.setTextViewTextSize(R.id.text, COMPLEX_UNIT_PX, NotificationAdapter.getContentSize(appContext));
-        }
+        contentView.setTextViewTextSize(R.id.title, COMPLEX_UNIT_PX, NotificationAdapter.getTitleSize(appContext));
+        contentView.setTextColor(R.id.text, NotificationAdapter.getTextColor(appContext));
+        contentView.setTextViewTextSize(R.id.text, COMPLEX_UNIT_PX, NotificationAdapter.getTextSize(appContext));
 
         Notification notification = new Notification();
         notification.icon = R.drawable.ic_launcher;
@@ -50,6 +52,8 @@ public class NotificationAdapterTest {
                 (NotificationManager) appContext.getSystemService(NOTIFICATION_SERVICE);
         notifyMgr.notify(1, notification);
 
-//        assertEquals("cn.dreamtobe.toolset", appContext.getPackageName());
+        UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        device.openNotification();
+        device.wait(Until.hasObject(By.text(NOTIFICATION_TITLE)), TIMEOUT);
     }
 }
