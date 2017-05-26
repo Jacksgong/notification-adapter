@@ -1,6 +1,9 @@
 # Notification适配器
 
-> Notification风格适配，提取默认Notification的颜色
+Notification风格适配，提取默认Notification的颜色
+
+[ ![Download](https://api.bintray.com/packages/jacksgong/maven/notification-adapter/images/download.svg) ](https://bintray.com/jacksgong/maven/notification-adapter/_latestVersion)
+![](https://img.shields.io/badge/Android-NotificationAdapter-blue.svg)
 
 > 编写这个的目的是目前还有好多应用自定义Notification的布局是hardcode的，导致在不同的系统主题中显得格格不入(如Wifi万能钥匙等)，这个问题其实在2013年年底在微信就处理过，希望能够给大家带来思路。
 
