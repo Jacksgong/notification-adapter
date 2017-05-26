@@ -11,9 +11,9 @@ Notification风格适配，提取默认Notification的颜色
 
 > 业界其实有很多很多Notification自定义布局并且hardcoard的案例，好不和谐....
 
-![](https://raw.githubusercontent.com/Jacksgong/notification-adapter/master/art/alipay-demo.jpeg)
+![](https://github.com/Jacksgong/notification-adapter/raw/master/arts/alipay-demo.jpeg)
 
-![](https://raw.githubusercontent.com/Jacksgong/notification-adapter/master/art/wifi-master-key-demo.jpeg)
+![](https://github.com/Jacksgong/notification-adapter/raw/master/arts/wifi-master-key-demo.jpeg)
 
 ## 解决方案
 
@@ -31,12 +31,11 @@ Gradle引用
 dependencies {
     compile 'cn.dreamtobe.toolset:notification-adapter:1.0.0'
 }
-
 ```
 
 通过方法或者颜色
 
-```
+```java
 // 获取默认通知风格的Title的颜色
 NotificationAdapter.getTitleColor(Context)
 // 获取默认通知风格的Title的大小(Pixel)
