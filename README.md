@@ -23,7 +23,7 @@ Notification风格适配，提取默认Notification的颜色
 
 Gradle引用
 
-> 相关类: [NotificationAdapter](https://git.jacksgong.com/Jacksgong/notification-adapter/blob/master/src/main/java/cn/dreamtobe/toolset/NotificationAdapter.java)
+> 相关类: [NotificationAdapter](https://github.com/Jacksgong/notification-adapter/blob/master/src/main/java/cn/dreamtobe/toolset/NotificationAdapter.java)
 
 目前正在申请加入Jcenter中，在还没有通过前，在仓库: `https://dl.bintray.com/jacksgong/maven` 中。
 
