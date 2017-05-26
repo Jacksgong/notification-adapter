@@ -48,8 +48,13 @@ NotificationAdapter.getTextSize(Content)
 ```
 
 
-> 当然作为Notification，其实随着迭代演进已经有了很多很多很给力的Feature需要去适配，也欢迎大家到[Notification最佳实践](https://blog.dreamtobe.cn/2016/01/09/notification_best_practise/)拍砖，共同维护更好的Android环境。
+> 当然作为Notification，其实随着迭代演进已经有了很多很多很给力的Feature，也欢迎大家到[Notification最佳实践](https://blog.dreamtobe.cn/2016/01/09/notification_best_practise/)拍砖，共同维护更好的Android环境。
 
+## 验证
+
+大家可以参考[测试](https://github.com/Jacksgong/notification-adapter/blob/master/src/androidTest/java/NotificationAdapterTest.java)代码的使用来验证:
+
+![](https://github.com/Jacksgong/notification-adapter/raw/master/arts/test.jpeg)
 
 ## License
 
