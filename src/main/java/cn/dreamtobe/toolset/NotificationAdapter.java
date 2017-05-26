@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2017 Jacksgong(blog.dreamtobe.cn)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package cn.dreamtobe.toolset;
 
 import android.app.Notification;
@@ -9,44 +25,57 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 
 /**
- * @author Jacks gong
- * @since 2014-1-8 下午7:31:31
+ * The adapter for notification, what is used for adapter various system styles on notification.
  */
 public class NotificationAdapter {
 
     private static Integer TITLE_COLOR = null;
-    private static float TITLE_SIZE = 11;
+    private static float TITLE_SIZE = 0;
 
     private static Integer CONTENT_COLOR = null;
-    private static float CONTENT_SIZE = 11;
+    private static float CONTENT_SIZE = 0;
 
-    private final static String TITLE_TEXT = "SOME-SAMPLE-TEXT";
-    private final static String CONTENT_TEXT = "SOME-CONTENT-TEXT";
+    private final static String TITLE_TEXT = "SAMPLE-TITLE";
+    private final static String CONTENT_TEXT = "SAMPLE-TEXT";
 
     /**
-     * 适配多种通知栏，得到默认文字颜色
+     * Get the color of title on default notification style.
      *
-     * @param context
-     * @return 默认文字颜色
+     * @return the color of title on default notification style.
      */
     public static Integer getTitleColor(Context context) {
-        extractColors(context);
+        if (TITLE_COLOR == null) extractNotificationStyle(context);
         return TITLE_COLOR;
     }
 
+    /**
+     * Get the size(on pixel) of title on default notification style.
+     *
+     * @return the size(on pixel) of title on default notification style.
+     */
     public static float getTitleSize(Context context) {
-        extractColors(context);
+        if (TITLE_SIZE == 0) extractNotificationStyle(context);
         return TITLE_SIZE;
     }
 
+    /**
+     * Get the color of text on default notification style.
+     *
+     * @return the color of text on default notification style.
+     */
     public static Integer getTextColor(Context context) {
-        extractColors(context);
+        if (CONTENT_COLOR == null) extractNotificationStyle(context);
         return CONTENT_COLOR;
     }
 
 
+    /**
+     * Get the size(on pixel) of text on default notification style.
+     *
+     * @return the size(on pixel) of text on default notification style.
+     */
     public static float getTextSize(Context context) {
-        extractColors(context);
+        if (CONTENT_SIZE == 0) extractNotificationStyle(context);
         return CONTENT_SIZE;
     }
 
@@ -77,14 +106,10 @@ public class NotificationAdapter {
     }
 
     /**
-     * 枚举Notification颜色
+     * Extract the style on notification and assign to params.
      */
-    private static synchronized void extractColors(final Context context) {
+    private static void extractNotificationStyle(final Context context) {
         if (context == null) throw new IllegalArgumentException();
-
-        if (TITLE_COLOR != null) {
-            return;
-        }
 
         try {
             final Notification.Builder builder = new Notification.Builder(context);
@@ -101,8 +126,10 @@ public class NotificationAdapter {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
                     notification = builder.build();
                 } else {
+                    //noinspection deprecation
                     notification = builder.getNotification();
                 }
+                //noinspection deprecation
                 tempView = notification.contentView;
             }
 
