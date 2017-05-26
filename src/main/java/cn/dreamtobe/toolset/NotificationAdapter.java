@@ -39,13 +39,13 @@ public class NotificationAdapter {
         return TITLE_SIZE;
     }
 
-    public static Integer getContentColor(Context context) {
+    public static Integer getTextColor(Context context) {
         extractColors(context);
         return CONTENT_COLOR;
     }
 
 
-    public static float getContentSize(Context context) {
+    public static float getTextSize(Context context) {
         extractColors(context);
         return CONTENT_SIZE;
     }
