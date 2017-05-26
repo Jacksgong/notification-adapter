@@ -2,7 +2,7 @@
 
 > Notification风格适配，提取默认Notification的颜色
 
-> 编写这个的目的是目前还有好多应用自定义Notification的布局是hardcode的，导致在不同的系统主题中显得格格不入(如Wifi万能钥匙、支付宝等)，这个问题其实在2013年年底我在微信就解决了该问题了，希望能够给大家带来思路。
+> 编写这个的目的是目前还有好多应用自定义Notification的布局是hardcode的，导致在不同的系统主题中显得格格不入(如Wifi万能钥匙等)，这个问题其实在2013年年底在微信就处理过，希望能够给大家带来思路。
 
 ## 辣眼睛案例
 
@@ -20,14 +20,45 @@
 
 Gradle引用
 
-```
+```groovy
+dependencies {
+    compile 'cn.dreamtobe.toolset:notification-adapter:1.0.0'
+}
 
 ```
 
 通过方法或者颜色
 
 ```
+// 获取默认通知风格的Title的颜色
+NotificationAdapter.getTitleColor(Context)
+// 获取默认通知风格的Title的大小(Pixel)
+NotificationAdapter.getTitleSize(Content)
+// 获取默认通知风格的Text的颜色
+NotificationAdapter.getTextColor(Context)
+// 获取默认通知风格的Text的大小(Pixel)
+NotificationAdapter.getTextSize(Content)
+// 获取默认通知风格的Text的颜色
 ```
 
 
-当然作为Notification，其实随着迭代演进已经有了很多很多很给力的Feature需要去适配，也欢迎大家到[Notification最佳实践](https://blog.dreamtobe.cn/2016/01/09/notification_best_practise/)拍砖，共同维护更好的Android环境。
+> 当然作为Notification，其实随着迭代演进已经有了很多很多很给力的Feature需要去适配，也欢迎大家到[Notification最佳实践](https://blog.dreamtobe.cn/2016/01/09/notification_best_practise/)拍砖，共同维护更好的Android环境。
+
+
+## License
+
+```
+Copyright (C) 2017 Jacksgong(blog.dreamtobe.cn)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

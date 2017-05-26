@@ -28,6 +28,10 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     productFlavors {
+        product {
+            minSdkVersion 11
+        }
+        
         flavorAndroidTest {
             // Test application flavor for uiautomatior tests
             minSdkVersion 18
