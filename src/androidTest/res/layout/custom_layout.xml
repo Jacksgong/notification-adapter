@@ -8,16 +8,11 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Testing"
-        android:textColor="#fff"
-        android:textSize="13dp"/>
+        android:textColor="#fff"/>
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:text="Testing is awecome"
-        android:textColor="#fff"
-        android:textSize="13dp"/>
+        android:textColor="#fff"/>
 </LinearLayout>

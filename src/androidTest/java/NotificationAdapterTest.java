@@ -35,10 +35,17 @@ public class NotificationAdapterTest {
         RemoteViews contentView = new RemoteViews("cn.dreamtobe.toolset.test", R.layout.custom_layout);
         contentView.setTextViewText(R.id.title, NOTIFICATION_TITLE);
         contentView.setTextViewText(R.id.text, NOTIFICATION_TEXT);
+
+        // Fix the Notification-Style problem ---------------
+        // Set the default title style color to title view.
         contentView.setTextColor(R.id.title, NotificationAdapter.getTitleColor(appContext));
+        // Set the default title style size to title view
         contentView.setTextViewTextSize(R.id.title, COMPLEX_UNIT_PX, NotificationAdapter.getTitleSize(appContext));
+        // Set the default text style color to text view
         contentView.setTextColor(R.id.text, NotificationAdapter.getTextColor(appContext));
+        // Set the default text style size to text view
         contentView.setTextViewTextSize(R.id.text, COMPLEX_UNIT_PX, NotificationAdapter.getTextSize(appContext));
+        // End fix the Notification-Style problem ---------------
 
         Notification notification = new Notification();
         notification.icon = R.drawable.ic_launcher;
